@@ -1,5 +1,7 @@
 # Ostinato
 
+![Ostinato Keyboard](docs/9DMEK.jpg)
+
 A custom 40% ortholinear mechanical keyboard designed from the ground up.
 
 Ostinato is a compact 45-key ortholinear keyboard featuring a custom PCB, aluminum case, gasket-mounted plate, rotary encoder, RGB status indicators, and hybrid USB/Bluetooth connectivity.
@@ -260,3 +262,6 @@ Designed and developed by **sky2park**.
 ## License
 
 License information will be added later.
+
+
+![Ostinato Keyboard](docs/RHO8S.jpg)
