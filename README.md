@@ -64,8 +64,8 @@ The layout is designed around multiple layers to provide the functionality of a 
 The firmware includes the following primary layers:
 
 - **Base**
-- **Lower**
-- **Raise**
+- **Navigation**
+- **Number / Symbol**
 - **Function**
 - **Gaming**
 - **Gaming+**
