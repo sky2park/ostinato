@@ -26,7 +26,7 @@ The project includes the complete hardware and firmware design, from the PCB and
 - Gasket-mounted plate
 - Custom aluminum top case
 - MJF PA12S nylon bottom case
-- Stainless steel internal weight
+- Stainless steel(Or H59 Copper Alloy Brass) internal weight
 
 ---
 
@@ -49,7 +49,7 @@ The project includes the complete hardware and firmware design, from the PCB and
 | Plate | PC |
 | Top Case | 6061 Aluminum |
 | Bottom Case | MJF PA12S Nylon |
-| Internal Weight | SUS304 Stainless Steel |
+| Internal Weight | SUS304 Stainless Steel Or H59 Copper Alloy Brass |
 
 ---
 
