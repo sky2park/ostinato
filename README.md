@@ -26,7 +26,7 @@ The project includes the complete hardware and firmware design, from the PCB and
 - Gasket-mounted plate
 - Custom aluminum top case
 - MJF PA12S nylon bottom case
-- Stainless steel(Or H59 Copper Alloy Brass) internal weight
+- Stainless steel or H59 Copper alloy Brass internal weight
 
 ---
 
@@ -49,7 +49,7 @@ The project includes the complete hardware and firmware design, from the PCB and
 | Plate | PC |
 | Top Case | 6061 Aluminum |
 | Bottom Case | MJF PA12S Nylon |
-| Internal Weight | SUS304 Stainless Steel Or H59 Copper Alloy Brass |
+| Internal Weight | SUS304 Stainless steel or H59 Copper alloy Brass |
 
 ---
 
@@ -117,9 +117,11 @@ This allows the current Bluetooth connection state to be checked without using a
 Ostinato uses four SK6812MINI RGB LEDs. The LEDs are used as functional status indicators rather than decorative backlighting.
 
 ### Bluetooth Indicators
+
 Three LEDs indicate the status of the three Bluetooth slots.
 
 ### Layer Indicator
+
 The remaining LED is used for layer/status indication. The firmware can also use the indicator to display the state of special keyboard functions.
 
 ---
@@ -152,3 +154,109 @@ Rather than relying on a single wireless controller, the design separates the ma
        │   Bluetooth   │
        │  Controller   │
        └───────────────┘
+```
+
+This architecture allows the RP2040 to remain responsible for the core keyboard operations (matrix scanning, lighting, Vial configuration) while the ESP32-C3 handles the Bluetooth connectivity stack.
+
+---
+
+## Firmware
+
+The firmware is based on [QMK](https://qmk.fm/) and includes [Vial](https://get.vial.today/) support.
+
+```text
+firmware/
+├── esp32-c3/
+├── qmk/
+│   └── ostinato/
+└── vial/
+    └── ostinato/
+```
+
+- **QMK Firmware**: Handles matrix scanning, keymaps and layers, custom keycodes, rotary encoder, RGB status indicators, USB output, and UART communication with the ESP32-C3.
+- **ESP32-C3 Firmware**: Handles Bluetooth profile management, connection slots, and wireless HID output.
+
+### Custom Keycodes
+
+Ostinato defines custom keycodes for output and connection control:
+
+- `OUT_USB`
+- `OUT_BT1`
+- `OUT_BT2`
+- `OUT_BT3`
+- `BT_CLR`
+
+These keycodes allow switching between USB and the three paired Bluetooth devices on the fly.
+
+---
+
+## Hardware
+
+The hardware is divided into modular custom boards:
+
+```text
+pcb/
+├── main-module/
+├── led_module/
+└── knob-module/
+```
+
+- **Main Module**: Hosts the RP2040 controller, ESP32-C3, diode matrix, and power regulation.
+- **LED Module**: Contains four SK6812MINI addressable RGB LEDs for slot and layer visualization.
+- **Knob Module**: Houses the rotary encoder and its breakout interface.
+
+### Case & Plate
+
+- **Top Case**: CNC-machined 6061 aluminum
+- **Bottom Case**: MJF 3D-printed PA12S nylon
+- **Internal Weight**: Laser-cut SUS304 Stainless steel or H59 Copper alloy Brass
+- **Mounting**: Custom Poron gasket strips isolating the PC plate for a soft, resonant bottom-out.
+
+Plate cutting profiles are provided in DXF format under `plate/`:
+- `design.dxf`
+- `plate.dxf`
+
+---
+
+## Repository Structure
+
+```text
+ostinato/
+├── case/             # CAD and step/stl files for case parts
+├── firmware/
+│   ├── esp32-c3/     # ESP-IDF / Arduino BT firmware
+│   ├── qmk/          # QMK source and keyboard rules
+│   │   └── ostinato/
+│   └── vial/         # Vial configuration & keymap files
+│       └── ostinato/
+├── pcb/
+│   ├── main-module/  # Schematic, KiCad layouts, and Gerber files
+│   ├── led_module/
+│   └── knob-module/
+├── plate/
+│   ├── design.dxf
+│   └── plate.dxf
+└── README.md
+```
+
+---
+
+## Status
+
+Ostinato is an active custom hardware project. Schematics, gerber files, and firmware implementations may receive breaking updates as physical revisions are tested.
+
+---
+
+## Credits
+
+Designed and developed by **sky2park**.
+
+- [QMK Firmware](https://qmk.fm/)
+- [Vial](https://get.vial.today/)
+- Raspberry Pi RP2040 & Espressif ESP32-C3
+
+---
+
+## License
+
+License information will be added later.
