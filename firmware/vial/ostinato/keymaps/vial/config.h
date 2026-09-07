@@ -1,0 +1,10 @@
+#pragma once
+
+#define VIAL_KEYBOARD_UID {0xE6, 0xC1, 0x87, 0x8E, 0xE4, 0x21, 0xAA, 0xB5}
+
+#define VIAL_UNLOCK_COMBO_ROWS { 0, 3 }
+#define VIAL_UNLOCK_COMBO_COLS { 0, 11 }
+
+#define DYNAMIC_KEYMAP_LAYER_COUNT 8
+
+#define VIAL_COMBO_ENTRIES 10
