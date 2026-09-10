@@ -214,8 +214,8 @@ pcb/
 - **Internal Weight**: Laser-cut SUS304 Stainless steel or H59 Copper alloy Brass
 - **Mounting**: Custom Poron gasket strips isolating the PC plate for a soft, resonant bottom-out.
 
-**Note on Manufacturing & Tolerances**  
-All case components (top case, bottom case, and internal weight) were prototyped and verified using **JLCCNC** and **JLC3DP**. Because tolerances and finishing can vary across different manufacturers and fabrication methods, parts produced through other vendors have not been tested and may have fitment/assembly issues.
+> **Note on Manufacturing & Tolerances**  
+> All case components (top case, bottom case, and internal weight) were prototyped and verified using **JLCCNC** and **JLC3DP**. Because tolerances and finishing can vary across different manufacturers and fabrication methods, parts produced through other vendors have not been tested and may have fitment/assembly issues.
 
 Plate cutting profiles are provided in DXF format under `plate/`:
 - `design.dxf`
