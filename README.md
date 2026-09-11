@@ -1,6 +1,6 @@
 # Ostinato
 
-[![Firmware: GPL-2.0](https://img.shields.io/badge/Firmware-GPL--2.0-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+[![Firmware: GPL-3.0](https://img.shields.io/badge/Firmware-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![Hardware: CC BY-NC 4.0](https://img.shields.io/badge/Hardware-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ![Ostinato Keyboard](docs/9DMEK.jpg)
