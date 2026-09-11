@@ -5,7 +5,7 @@
 [![Firmware: GPL-3.0](https://img.shields.io/badge/Firmware-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![Hardware: CC BY-NC 4.0](https://img.shields.io/badge/Hardware-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
-![Ostinato Keyboard](docs/9DMEK.jpg)
+![Ostinato Keyboard](9DMEK.jpg)
 
 A custom 40% ortholinear mechanical keyboard designed from the ground up.
 
@@ -351,11 +351,4 @@ Designed and developed by **sky2park**.
 - [Vial](https://get.vial.today/)
 - Raspberry Pi RP2040 & Espressif ESP32-C3
 
----
-
-## License
-
-License information will be added later.
-
-
-![Ostinato Keyboard](docs/RHO8S.jpg)
+![Ostinato Keyboard](RHO8S.jpg)
