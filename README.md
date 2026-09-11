@@ -1,5 +1,8 @@
 # Ostinato
 
+[![Firmware: GPL-2.0](https://img.shields.io/badge/Firmware-GPL--2.0-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+[![Hardware: CC BY-NC 4.0](https://img.shields.io/badge/Hardware-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+
 ![Ostinato Keyboard](docs/9DMEK.jpg)
 
 A custom 40% ortholinear mechanical keyboard designed from the ground up.
@@ -164,7 +167,7 @@ This architecture allows the RP2040 to remain responsible for the core keyboard 
 
 ## Firmware
 
-The firmware is based on [QMK](https://qmk.fm/) and includes [Vial](https://get.vial.today/) support.
+The Ostinato firmware is based on QMK and Vial-QMK and is licensed under the **GNU General Public License v2.0 (GPL-2.0)**.
 
 ```text
 firmware/
@@ -193,6 +196,12 @@ These keycodes allow switching between USB and the three paired Bluetooth device
 ---
 
 ## Hardware
+
+The Ostinato hardware design files, including PCB, case, plate, and related CAD files, are licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license.
+
+Personal and non-commercial use is permitted.
+
+Commercial use requires prior permission from the author.
 
 The hardware is divided into modular custom boards:
 
