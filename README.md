@@ -223,6 +223,86 @@ Plate cutting profiles are provided in DXF format under `plate/`:
 
 ---
 
+## Manufacturing & Ordering Guide
+
+All components have been designed and verified with specific fabrication vendors. If you plan to build Ostinato, follow the guidelines below for ordering parts.
+
+### Overview
+
+| Part | Source Files | Recommended Service | Process / Material Specs |
+|---|---|---|---|
+| **Top Case** | `case/top.step`<br>`case/top_theads.pdf` (Thread/tapping drawing) | JLCCNC | CNC Machining / 6061 Aluminum (Sandblasted / Anodized) |
+| **Bottom Case** | `case/bottom.step` | JLC3DP | 3D Printing / MJF Nylon (PA12S) |
+| **Internal Weight** | `case/weight.step` | JLCCNC | CNC or Sheet Metal / SUS304 Stainless steel or H59 Brass |
+| **Plate** | `plate/plate.dxf` | Laser cutting service | Laser Cut / 1.5mm Polycarbonate (PC) |
+| **PCBs** | `pcb/*/gerber/` | JLCPCB | FR-4 / 1.6mm (or 1.2mm depending on build) |
+
+---
+
+### Component Details & Ordering Instructions
+
+#### 1. Case & Weight (JLCCNC / JLC3DP)
+- **Top Case**:
+  - **File**: `case/top.step`
+  - **Thread Drawing**: `case/top_theads.pdf` (Attach this 2D drawing when ordering for threaded hole tapping)
+  - **Service**: [JLCCNC](https://jlccnc.com/) (CNC Machining)
+  - **Material**: 6061 Aluminum
+  - **Finish**: Bead blasted (Sandblasting #150 or #180) + Anodized (Color of your choice)
+- **Bottom Case**:
+  - **File**: `case/bottom.step`
+  - **Service**: [JLC3DP](https://jlc3dp.com/) (3D Printing)
+  - **Technology**: MJF (Multi Jet Fusion)
+  - **Material**: PA12S Nylon (Black/Dyed)
+- **Internal Weight**:
+  - **File**: `case/weight.step`
+  - **Service**: [JLCCNC](https://jlccnc.com/)
+  - **Material**: SUS304 Stainless steel (Brushed / Sandblasted) or H59 Brass
+
+> ⚠️ **Important Tolerance Warning**:  
+> The CAD models, tolerances, and fitment clearances are tuned and verified specifically for **JLCCNC** and **JLC3DP**. Fabrication via other vendors or processes has not been tested and may result in improper fitment, shrinkage variance, or assembly issues.
+
+#### 2. Switch Plate
+- **File**: `plate/plate.dxf`
+- **Material**: 1.5mm Polycarbonate (PC)
+- **Service**: Any precision laser-cutting vendor (e.g., JLCCNC sheet cutting or local laser cutting services).
+
+#### 3. PCBs
+- **Paths**:
+  - `pcb/main-module/`
+  - `pcb/led_module/`
+  - `pcb/knob-module/`
+- **Service**: [JLCPCB](https://jlcpcb.com/)
+- **Ordering Recommendations**:
+  - Upload the Gerber zip files along with the **BOM and CPL files** from each folder to order the **PCB Assembly (SMT)** service.
+  - **PCBA Settings**:
+    - **Assembly Side**: Select **`Bottom Side`** for all three modules.
+    - **PCBA Type**:
+      - `main-module`: Must be set to **`Standard`** due to assembly constraints of the ESP32-C3 module (bottom pad soldering).
+      - `led_module` & `knob-module`: Select **`Economy`**.
+  - ⚠️ **Note**: The **EC11 rotary encoder** on the `knob-module` is not covered by the SMT service; source it separately and solder it by hand (through-hole soldering).
+  
+#### 4. Additional Off-the-Shelf Parts (Hardware & Sourcing)
+
+These standard hardware parts and components are not custom-fabricated and can be sourced from general hardware marketplaces (e.g., AliExpress) or custom keyboard vendors.
+
+> **Note**: The links below reflect the exact listings and sources I used for my prototype build. They are provided solely for reference—any equivalent parts matching the specifications will work.
+
+| Item | Specification | Qty | Reference Link | Notes |
+|---|---|---|---|---|
+| **Poron Gasket Strips** | 20mm (L) × 3mm (W) × 2mm (T) | 8 | [AliExpress](https://ko.aliexpress.com/item/1005005713921230.html) | Mounts to plate tabs / case edges |
+| **FPC Ribbon Cable** | 0.5mm pitch, 6-pin, **Reverse (Type B)**, 10–15cm | 2 | [AliExpress](https://aliexpress.com/item/1005007862185591.html) | Connects main module to LED / knob modules |
+| **Rotary Encoder** | EC11 rotary encoder, **15mm shaft height** | 1 | [AliExpress](https://aliexpress.com/item/1005009120433387.html) | Hand-soldered onto `knob-module` |
+| **Encoder Knob** | Compatible with EC11 shaft **20 x 13 x 6mm** | 1 | [AliExpress](https://aliexpress.com/item/1005007339301144.html) | Fits selected rotary encoder |
+| **Unified Daughterboard S1 & Cable** | Unified Daughterboard (UDB) S1 with Molex cable | 1 | [Vendor Link](https://keebd.com/products/unified-daughterboards?variant=45606739411096) | Available via various keyboard vendor stores (e.g., CannonKeys, Swagkeys, etc.)
+| **Light Guides** | Acrylic light pipe / guide **1.5-2.2 or 2.9-3.0** | 4 | [AliExpress](https://aliexpress.com/item/1005005231503928.html) | Diffuses status LEDs |
+| **Heat-set Insert** | M2 × L3mm × OD 3.2mm | 4 | [AliExpress](https://aliexpress.com/item/1005006472641726.html) | Case / module mounting |
+| **Heat-set Insert** | M3 × L4mm × OD 4.2mm | 6 | [AliExpress](https://aliexpress.com/item/1005006472641726.html) | Weight / case and Weight / UDB mounting |
+| **Screw** | M2 × 4mm | 4 | [AliExpress](https://aliexpress.com/item/1005005270702287.html) | Internal module mounting |
+| **Screw** | M2.5 × 8mm | 4 | [AliExpress](https://aliexpress.com/item/1005005270702287.html) | Case assembly |
+| **Screw** | M3 × 5mm | 6 | [AliExpress](https://aliexpress.com/item/1005005270702287.html) | Internal weight / UDB fastening |
+
+---
+
 ## Repository Structure
 
 ```text
