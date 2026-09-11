@@ -314,6 +314,13 @@ These standard hardware parts and components are not custom-fabricated and can b
 
 ---
 
+## Build Guide
+
+A detailed build guide video is currently in preparation
+and will be added here once available.
+
+---
+
 ## Repository Structure
 
 ```text
