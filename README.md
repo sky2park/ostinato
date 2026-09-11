@@ -1,151 +1,151 @@
 # Ostinato
 
-[🇰🇷 한국어](../README.md)
+[🇺🇸 English](README.en.md)
 
 [![Firmware: GPL-3.0](https://img.shields.io/badge/Firmware-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![Hardware: CC BY-NC 4.0](https://img.shields.io/badge/Hardware-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ![Ostinato Keyboard](docs/9DMEK.jpg)
 
-A custom 40% ortholinear mechanical keyboard designed from the ground up.
+처음부터 직접 설계한 40% 오소리니어 기계식 키보드입니다.
 
-Ostinato is a compact 45-key ortholinear keyboard featuring a custom PCB, aluminum case, gasket-mounted plate, rotary encoder, RGB status indicators, and hybrid USB/Bluetooth connectivity.
+Ostinato는 커스텀 PCB, 알루미늄 케이스, 가스켓 마운트 플레이트, 로터리 엔코더, RGB 상태 표시등, USB/Bluetooth 하이브리드 연결을 갖춘 45키 오소리니어 키보드입니다.
 
-The project includes the complete hardware and firmware design, from the PCB and case to the QMK/Vial firmware and ESP32-C3 Bluetooth controller.
-
----
-
-## Features
-
-- 40% ortholinear layout
-- 45 keys
-- MX-compatible switches
-- QMK firmware
-- Vial support
-- USB and Bluetooth connectivity
-- ESP32-C3-based Bluetooth controller
-- RP2040-based main controller
-- Three Bluetooth connection slots
-- Rotary encoder
-- SK6812MINI RGB LEDs
-- Dedicated Bluetooth status indicators
-- Layer status indication
-- Gasket-mounted plate
-- Custom aluminum top case
-- MJF PA12S nylon bottom case
-- Stainless steel or H59 Copper alloy Brass internal weight
+이 프로젝트에는 PCB와 케이스부터 QMK/Vial 펌웨어와 ESP32-C3 Bluetooth 컨트롤러까지 전체 하드웨어 및 펌웨어 설계가 포함되어 있습니다.
 
 ---
 
-## Specifications
+## 주요 기능
 
-| Specification | Details |
+- 40% 오소리니어 레이아웃
+- 45키
+- MX 호환 스위치
+- QMK 펌웨어
+- Vial 지원
+- USB 및 Bluetooth 연결
+- ESP32-C3 기반 Bluetooth 컨트롤러
+- RP2040 기반 메인 컨트롤러
+- 3개의 Bluetooth 연결 슬롯
+- 로터리 엔코더
+- SK6812MINI RGB LED
+- 전용 Bluetooth 상태 표시등
+- 레이어 상태 표시
+- 가스켓 마운트 플레이트
+- 커스텀 알루미늄 상판 케이스
+- MJF PA12S 나일론 하판 케이스
+- SUS304 스테인리스 스틸 또는 H59 구리 합금 황동 내부 웨이트
+
+---
+
+## 사양
+
+| 항목 | 내용 |
 |---|---|
-| Layout | 40% Ortholinear |
-| Keys | 45 |
-| Main MCU | RP2040 |
+| 레이아웃 | 40% 오소리니어 |
+| 키 수 | 45 |
+| 메인 MCU | RP2040 |
 | Bluetooth MCU | ESP32-C3 |
-| Firmware | QMK |
-| Keymap Configuration | Vial |
-| Connectivity | USB / Bluetooth |
-| Bluetooth Slots | 3 |
-| Switch Type | MX-compatible |
-| RGB LEDs | SK6812MINI (4x) |
-| Rotary Encoder | 1 |
-| Mounting | Gasket mount (Poron) |
-| Plate | PC |
-| Top Case | 6061 Aluminum |
-| Bottom Case | MJF PA12S Nylon |
-| Internal Weight | SUS304 Stainless steel or H59 Copper alloy Brass |
+| 펌웨어 | QMK |
+| 키맵 설정 | Vial |
+| 연결 방식 | USB / Bluetooth |
+| Bluetooth 슬롯 | 3 |
+| 스위치 종류 | MX 호환 |
+| RGB LED | SK6812MINI (4개) |
+| 로터리 엔코더 | 1개 |
+| 마운팅 | 가스켓 마운트 (Poron) |
+| 플레이트 | PC |
+| 상판 케이스 | 6061 알루미늄 |
+| 하판 케이스 | MJF PA12S 나일론 |
+| 내부 웨이트 | SUS304 스테인리스 스틸 또는 H59 구리 합금 황동 |
 
 ---
 
-## Layout
+## 레이아웃
 
-Ostinato uses a compact 40% ortholinear layout with 45 keys.
+Ostinato는 45키의 컴팩트한 40% 오소리니어 레이아웃을 사용합니다.
 
-The layout is designed around multiple layers to provide the functionality of a full-size keyboard while maintaining a small footprint.
+작은 크기를 유지하면서 풀사이즈 키보드에 준하는 기능을 제공할 수 있도록 여러 레이어를 중심으로 설계되었습니다.
 
-### Layers
+### 레이어
 
-The firmware includes the following primary layers:
+펌웨어에는 다음과 같은 주요 레이어가 포함되어 있습니다:
 
-- **Base**
-- **Navigation**
-- **Number / Symbol**
-- **Function**
-- **Gaming**
-- **Gaming+**
-- **Gaming Navigation**
+- **기본**
+- **내비게이션**
+- **숫자 / 기호**
+- **기능**
+- **게이밍**
+- **게이밍+**
+- **게이밍 내비게이션**
 
-Additional layers and key assignments can be configured through Vial.
+추가 레이어와 키 할당은 Vial을 통해 설정할 수 있습니다.
 
 ---
 
-## Connectivity
+## 연결
 
-Ostinato supports both wired USB and Bluetooth operation.
+Ostinato는 유선 USB와 Bluetooth를 모두 지원합니다.
 
-The RP2040 handles the primary keyboard functionality, while an ESP32-C3 module provides Bluetooth connectivity.
+RP2040은 키보드의 주요 기능을 담당하며, ESP32-C3 모듈이 Bluetooth 연결을 제공합니다.
 
 ### USB
 
-In USB mode, the keyboard operates as a standard USB HID keyboard.
+USB 모드에서는 일반적인 USB HID 키보드로 동작합니다.
 
 ### Bluetooth
 
-The keyboard supports three Bluetooth connection slots:
+키보드는 3개의 Bluetooth 연결 슬롯을 지원합니다:
 
 - **Bluetooth 1**
 - **Bluetooth 2**
 - **Bluetooth 3**
 
-The active Bluetooth slot can be selected directly from the keyboard. The firmware communicates with the ESP32-C3 over UART to control Bluetooth connection state and slot selection.
+활성 Bluetooth 슬롯은 키보드에서 직접 선택할 수 있습니다. 펌웨어는 UART를 통해 ESP32-C3와 통신하며 Bluetooth 연결 상태와 슬롯 선택을 제어합니다.
 
 ---
 
-## Bluetooth Status
+## Bluetooth 상태
 
-The RGB LEDs are used to provide visual feedback for Bluetooth status. Each Bluetooth slot has a dedicated status indicator.
+RGB LED는 Bluetooth 상태를 시각적으로 표시하는 데 사용됩니다. 각 Bluetooth 슬롯에는 전용 상태 표시등이 있습니다.
 
-The indicators distinguish between states such as:
+표시등은 다음과 같은 상태를 구분합니다:
 
-- Advertising
-- Connected
-- Pairing
-- Error / unavailable
+- 광고(Advertising)
+- 연결됨
+- 페어링
+- 오류 / 사용 불가
 
-This allows the current Bluetooth connection state to be checked without using a host device.
-
----
-
-## RGB Indicators
-
-Ostinato uses four SK6812MINI RGB LEDs. The LEDs are used as functional status indicators rather than decorative backlighting.
-
-### Bluetooth Indicators
-
-Three LEDs indicate the status of the three Bluetooth slots.
-
-### Layer Indicator
-
-The remaining LED is used for layer/status indication. The firmware can also use the indicator to display the state of special keyboard functions.
+이를 통해 호스트 기기를 사용하지 않고도 현재 Bluetooth 연결 상태를 확인할 수 있습니다.
 
 ---
 
-## Rotary Encoder
+## RGB 표시등
 
-Ostinato includes a rotary encoder for additional input.
+Ostinato는 4개의 SK6812MINI RGB LED를 사용합니다. 이 LED는 장식용 백라이트가 아니라 기능적인 상태 표시등으로 사용됩니다.
 
-The encoder can be configured through QMK and Vial and can be assigned different functions depending on the active layer.
+### Bluetooth 표시등
+
+3개의 LED가 각각 3개의 Bluetooth 슬롯 상태를 표시합니다.
+
+### 레이어 표시등
+
+나머지 1개의 LED는 레이어/상태 표시용으로 사용됩니다. 펌웨어는 이 표시등을 특수 키보드 기능의 상태를 표시하는 데에도 사용할 수 있습니다.
 
 ---
 
-## Architecture & Design Philosophy
+## 로터리 엔코더
 
-The goal of Ostinato is to combine a compact ortholinear layout with functionality normally associated with larger keyboards.
+Ostinato에는 추가 입력을 위한 로터리 엔코더가 포함되어 있습니다.
 
-Rather than relying on a single wireless controller, the design separates the main keyboard controller and Bluetooth controller:
+엔코더는 QMK와 Vial을 통해 설정할 수 있으며, 활성 레이어에 따라 서로 다른 기능을 할당할 수 있습니다.
+
+---
+
+## 아키텍처 및 설계 철학
+
+Ostinato의 목표는 컴팩트한 오소리니어 레이아웃에 일반적으로 대형 키보드에서 제공되는 기능을 결합하는 것입니다.
+
+하나의 무선 컨트롤러에 모든 기능을 의존하는 대신, 메인 키보드 컨트롤러와 Bluetooth 컨트롤러를 분리하는 구조로 설계했습니다:
 
 ```text
        ┌───────────────┐
@@ -163,13 +163,13 @@ Rather than relying on a single wireless controller, the design separates the ma
        └───────────────┘
 ```
 
-This architecture allows the RP2040 to remain responsible for the core keyboard operations (matrix scanning, lighting, Vial configuration) while the ESP32-C3 handles the Bluetooth connectivity stack.
+이 아키텍처를 통해 RP2040은 핵심 키보드 동작(매트릭스 스캔, 조명, Vial 설정)을 담당하고, ESP32-C3는 Bluetooth 연결 스택을 담당합니다.
 
 ---
 
-## Firmware
+## 펌웨어
 
-The Ostinato firmware is based on QMK and Vial-QMK and is licensed under the **GNU General Public License v2.0 (GPL-2.0)**.
+Ostinato 펌웨어는 QMK 및 Vial-QMK를 기반으로 하며 **GNU General Public License v2.0 (GPL-2.0)**에 따라 라이선스가 부여됩니다.
 
 ```text
 firmware/
@@ -180,12 +180,12 @@ firmware/
     └── ostinato/
 ```
 
-- **QMK Firmware**: Handles matrix scanning, keymaps and layers, custom keycodes, rotary encoder, RGB status indicators, USB output, and UART communication with the ESP32-C3.
-- **ESP32-C3 Firmware**: Handles Bluetooth profile management, connection slots, and wireless HID output.
+- **QMK 펌웨어**: 매트릭스 스캔, 키맵 및 레이어, 커스텀 키코드, 로터리 엔코더, RGB 상태 표시등, USB 출력, ESP32-C3와의 UART 통신을 담당합니다.
+- **ESP32-C3 펌웨어**: Bluetooth 프로파일 관리, 연결 슬롯, 무선 HID 출력을 담당합니다.
 
-### Custom Keycodes
+### 커스텀 키코드
 
-Ostinato defines custom keycodes for output and connection control:
+Ostinato는 출력 및 연결 제어를 위해 다음과 같은 커스텀 키코드를 정의합니다:
 
 - `OUT_USB`
 - `OUT_BT1`
@@ -193,19 +193,19 @@ Ostinato defines custom keycodes for output and connection control:
 - `OUT_BT3`
 - `BT_CLR`
 
-These keycodes allow switching between USB and the three paired Bluetooth devices on the fly.
+이 키코드를 사용하면 USB와 페어링된 3개의 Bluetooth 기기 사이를 즉시 전환할 수 있습니다.
 
 ---
 
-## Hardware
+## 하드웨어
 
-The Ostinato hardware design files, including PCB, case, plate, and related CAD files, are licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license.
+PCB, 케이스, 플레이트 및 관련 CAD 파일을 포함한 Ostinato 하드웨어 설계 파일은 **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** 라이선스에 따라 제공됩니다.
 
-Personal and non-commercial use is permitted.
+개인적 및 비상업적 사용은 허용됩니다.
 
-Commercial use requires prior permission from the author.
+상업적 사용에는 저작자의 사전 허가가 필요합니다.
 
-The hardware is divided into modular custom boards:
+하드웨어는 다음과 같은 모듈형 커스텀 보드로 구성됩니다:
 
 ```text
 pcb/
@@ -214,33 +214,33 @@ pcb/
 └── knob-module/
 ```
 
-- **Main Module**: Hosts the RP2040 controller, ESP32-C3, diode matrix, and power regulation.
-- **LED Module**: Contains four SK6812MINI addressable RGB LEDs for slot and layer visualization.
-- **Knob Module**: Houses the rotary encoder and its breakout interface.
+- **메인 모듈**: RP2040 컨트롤러, ESP32-C3, 다이오드 매트릭스 및 전원 회로를 탑재합니다.
+- **LED 모듈**: 슬롯 및 레이어 상태 표시를 위한 4개의 SK6812MINI 어드레서블 RGB LED를 탑재합니다.
+- **노브 모듈**: 로터리 엔코더와 브레이크아웃 인터페이스를 탑재합니다.
 
-### Case & Plate
+### 케이스 및 플레이트
 
-- **Top Case**: CNC-machined 6061 aluminum
-- **Bottom Case**: MJF 3D-printed PA12S nylon
-- **Internal Weight**: Laser-cut SUS304 Stainless steel or H59 Copper alloy Brass
-- **Mounting**: Custom Poron gasket strips isolating the PC plate for a soft, resonant bottom-out.
+- **상판 케이스**: CNC 가공 6061 알루미늄
+- **하판 케이스**: MJF 3D 프린팅 PA12S 나일론
+- **내부 웨이트**: 레이저 절단 SUS304 스테인리스 스틸 또는 H59 구리 합금 황동
+- **마운팅**: PC 플레이트를 분리하는 커스텀 Poron 가스켓 스트립을 사용하여 부드럽고 공명감 있는 바텀아웃을 구현합니다.
 
-> **Note on Manufacturing & Tolerances**  
-> All case components (top case, bottom case, and internal weight) were prototyped and verified using **JLCCNC** and **JLC3DP**. Because tolerances and finishing can vary across different manufacturers and fabrication methods, parts produced through other vendors have not been tested and may have fitment/assembly issues.
+> **제조 및 공차 관련 참고사항**  
+> 모든 케이스 부품(상판 케이스, 하판 케이스, 내부 웨이트)은 **JLCCNC** 및 **JLC3DP**를 통해 프로토타입을 제작하고 검증했습니다. 제조업체와 제작 방식에 따라 공차와 표면 마감이 달라질 수 있으므로, 다른 업체에서 제작한 부품은 테스트되지 않았으며 조립 또는 치수 호환성 문제가 발생할 수 있습니다.
 
-Plate cutting profiles are provided in DXF format under `plate/`:
+플레이트 절단 프로파일은 `plate/` 아래에 DXF 형식으로 제공됩니다:
 - `design.dxf`
 - `plate.dxf`
 
 ---
 
-## Manufacturing & Ordering Guide
+## 제조 및 주문 가이드
 
-All components have been designed and verified with specific fabrication vendors. If you plan to build Ostinato, follow the guidelines below for ordering parts.
+모든 부품은 특정 제작 업체를 기준으로 설계하고 검증했습니다. Ostinato를 제작할 계획이라면 아래 주문 가이드를 참고하세요.
 
-### Overview
+### 개요
 
-| Part | Source Files | Recommended Service | Process / Material Specs |
+| 부품 | 소스 파일 | 권장 서비스 | 공정 / 재료 사양 |
 |---|---|---|---|
 | **Top Case** | `case/top.step`<br>`case/top_theads.pdf` (Thread/tapping drawing) | JLCCNC | CNC Machining / 6061 Aluminum (Sandblasted / Anodized) |
 | **Bottom Case** | `case/bottom.step` | JLC3DP | 3D Printing / MJF Nylon (PA12S) |
@@ -250,34 +250,34 @@ All components have been designed and verified with specific fabrication vendors
 
 ---
 
-### Component Details & Ordering Instructions
+### 부품 상세 및 주문 방법
 
-#### 1. Case & Weight (JLCCNC / JLC3DP)
+#### 1. 케이스 및 웨이트 (JLCCNC / JLC3DP)
 - **Top Case**:
   - **File**: `case/top.step`
-  - **Thread Drawing**: `case/top_theads.pdf` (Attach this 2D drawing when ordering for threaded hole tapping)
-  - **Service**: [JLCCNC](https://jlccnc.com/) (CNC Machining)
-  - **Material**: 6061 Aluminum
-  - **Finish**: Bead blasted (Sandblasting #150 or #180) + Anodized (Color of your choice)
+  - **나사산 도면**: `case/top_theads.pdf` (탭 가공을 주문할 때 이 2D 도면을 함께 첨부하세요)
+  - **서비스**: [JLCCNC](https://jlccnc.com/) (CNC 가공)
+  - **재료**: 6061 알루미늄
+  - **표면 처리**: 비드 블라스트(샌드블라스트 #150 또는 #180) + 아노다이징(원하는 색상)
 - **Bottom Case**:
   - **File**: `case/bottom.step`
   - **Service**: [JLC3DP](https://jlc3dp.com/) (3D Printing)
-  - **Technology**: MJF (Multi Jet Fusion)
-  - **Material**: PA12S Nylon (Black/Dyed)
+  - **기술**: MJF (Multi Jet Fusion)
+  - **재료**: PA12S 나일론 (검정/염색)
 - **Internal Weight**:
   - **File**: `case/weight.step`
   - **Service**: [JLCCNC](https://jlccnc.com/)
-  - **Material**: SUS304 Stainless steel (Brushed / Sandblasted) or H59 Brass
+  - **재료**: SUS304 스테인리스 스틸 (헤어라인 / 샌드블라스트) 또는 H59 황동
 
-> ⚠️ **Important Tolerance Warning**:  
-> The CAD models, tolerances, and fitment clearances are tuned and verified specifically for **JLCCNC** and **JLC3DP**. Fabrication via other vendors or processes has not been tested and may result in improper fitment, shrinkage variance, or assembly issues.
+> ⚠️ **중요 공차 경고**:  
+> CAD 모델, 공차 및 조립 여유 치수는 **JLCCNC** 및 **JLC3DP**를 기준으로 조정하고 검증했습니다. 다른 업체나 다른 제작 방식은 테스트되지 않았으며, 부적절한 조립, 수축 편차 또는 조립 문제가 발생할 수 있습니다.
 
-#### 2. Switch Plate
+#### 2. 스위치 플레이트
 - **File**: `plate/plate.dxf`
-- **Material**: 1.5mm Polycarbonate (PC)
-- **Service**: Any precision laser-cutting vendor (e.g., JLCCNC sheet cutting or local laser cutting services).
+- **재료**: 1.5mm 폴리카보네이트 (PC)
+- **서비스**: 정밀 레이저 절단이 가능한 업체 (예: JLCCNC 판재 절단 또는 현지 레이저 절단 업체).
 
-#### 3. PCBs
+#### 3. PCB
 - **Paths**:
   - `pcb/main-module/`
   - `pcb/led_module/`
@@ -292,13 +292,13 @@ All components have been designed and verified with specific fabrication vendors
       - `led_module` & `knob-module`: Select **`Economy`**.
   - ⚠️ **Note**: The **EC11 rotary encoder** on the `knob-module` is not covered by the SMT service; source it separately and solder it by hand (through-hole soldering).
   
-#### 4. Additional Off-the-Shelf Parts (Hardware & Sourcing)
+#### 4. 추가 기성 부품 (하드웨어 및 구매)
 
-These standard hardware parts and components are not custom-fabricated and can be sourced from general hardware marketplaces (e.g., AliExpress) or custom keyboard vendors.
+이러한 표준 하드웨어 부품과 구성품은 별도 제작품이 아니며, 일반 하드웨어 마켓플레이스(예: AliExpress)나 커스텀 키보드 판매처에서 구매할 수 있습니다.
 
-> **Note**: The links below reflect the exact listings and sources I used for my prototype build. They are provided solely for reference—any equivalent parts matching the specifications will work.
+> **참고**: 아래 링크는 제가 프로토타입 제작에 실제로 사용한 동일한 제품 목록과 구매처입니다. 참고용으로만 제공하며, 사양에 맞는 동등한 부품이라면 어떤 제품을 사용해도 됩니다.
 
-| Item | Specification | Qty | Reference Link | Notes |
+| 품목 | 사양 | 수량 | 참고 링크 | 비고 |
 |---|---|---|---|---|
 | **Poron Gasket Strips** | 20mm (L) × 3mm (W) × 2mm (T) | 8 | [AliExpress](https://ko.aliexpress.com/item/1005005713921230.html) | Mounts to plate tabs / case edges |
 | **FPC Ribbon Cable** | 0.5mm pitch, 6-pin, **Reverse (Type B)**, 10–15cm | 2 | [AliExpress](https://aliexpress.com/item/1005007862185591.html) | Connects main module to LED / knob modules |
@@ -314,7 +314,7 @@ These standard hardware parts and components are not custom-fabricated and can b
 
 ---
 
-## Repository Structure
+## 저장소 구조
 
 ```text
 ostinato/
@@ -337,25 +337,18 @@ ostinato/
 
 ---
 
-## Status
+## 상태
 
-Ostinato is an active custom hardware project. Schematics, gerber files, and firmware implementations may receive breaking updates as physical revisions are tested.
+Ostinato는 현재 개발이 진행 중인 커스텀 하드웨어 프로젝트입니다. 실제 리비전을 테스트하는 과정에서 회로도, Gerber 파일 및 펌웨어 구현이 호환성을 깨뜨리는 형태로 변경될 수 있습니다.
 
 ---
 
-## Credits
+## 크레딧
 
-Designed and developed by **sky2park**.
+**sky2park**가 설계 및 개발했습니다.
 
 - [QMK Firmware](https://qmk.fm/)
 - [Vial](https://get.vial.today/)
 - Raspberry Pi RP2040 & Espressif ESP32-C3
-
----
-
-## License
-
-License information will be added later.
-
 
 ![Ostinato Keyboard](docs/RHO8S.jpg)
