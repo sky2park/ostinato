@@ -23,10 +23,7 @@ Ostinato는 커스텀 PCB, 알루미늄 케이스, 가스켓 마운트 플레이
 - QMK 펌웨어
 - Vial 지원
 - USB 및 Bluetooth 연결
-- ESP32-C3 기반 Bluetooth 컨트롤러
-* USB 전원 기반 작동
-* 배터리 미탑재
-* USB 전원 연결 시에만 Bluetooth 사용 가능
+- ESP32-C3 기반 Bluetooth 컨트롤러 (USB 전원 필요, 배터리 없음, 단독 무선 작동 불가)
 - RP2040 기반 메인 컨트롤러
 - 3개의 Bluetooth 연결 슬롯
 - 로터리 엔코더
