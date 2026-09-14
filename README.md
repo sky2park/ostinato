@@ -9,7 +9,7 @@
 
 처음부터 직접 설계한 40% 오소리니어 기계식 키보드입니다.
 
-Ostinato는 커스텀 PCB, 알루미늄 케이스, 가스켓 마운트 플레이트, 로터리 엔코더, RGB 상태 표시등, USB/Bluetooth 하이브리드 연결을 갖춘 45키 오소리니어 키보드입니다.
+Ostinato는 커스텀 PCB, 알루미늄 케이스, 가스켓 마운트 플레이트, 로터리 엔코더, RGB 상태 표시등, USB 연결을 기본으로 하는 45키 오소리니어 키보드입니다. USB 전원이 공급되는 상태에서 Bluetooth 무선 출력을 사용할 수 있습니다.
 
 이 프로젝트에는 PCB와 케이스부터 QMK/Vial 펌웨어와 ESP32-C3 Bluetooth 컨트롤러까지 전체 하드웨어 및 펌웨어 설계가 포함되어 있습니다.
 
@@ -24,6 +24,9 @@ Ostinato는 커스텀 PCB, 알루미늄 케이스, 가스켓 마운트 플레이
 - Vial 지원
 - USB 및 Bluetooth 연결
 - ESP32-C3 기반 Bluetooth 컨트롤러
+* USB 전원 기반 작동
+* 배터리 미탑재
+* USB 전원 연결 시에만 Bluetooth 사용 가능
 - RP2040 기반 메인 컨트롤러
 - 3개의 Bluetooth 연결 슬롯
 - 로터리 엔코더
@@ -47,7 +50,9 @@ Ostinato는 커스텀 PCB, 알루미늄 케이스, 가스켓 마운트 플레이
 | Bluetooth MCU | ESP32-C3 |
 | 펌웨어 | QMK |
 | 키맵 설정 | Vial |
-| 연결 방식 | USB / Bluetooth |
+| 연결 방식 | USB 기본 / Bluetooth 무선 출력 (USB 전원 필요) |
+| 전원 공급 | USB |
+| 배터리 | 없음 |
 | Bluetooth 슬롯 | 3 |
 | 스위치 종류 | MX 호환 |
 | RGB LED | SK6812MINI (4개) |
@@ -84,7 +89,13 @@ Ostinato는 45키의 컴팩트한 40% 오소리니어 레이아웃을 사용합�
 
 ## 연결
 
-Ostinato는 유선 USB와 Bluetooth를 모두 지원합니다.
+Ostinato는 USB 연결을 기본으로 사용하며, USB 전원이 공급되는 상태에서 Bluetooth 무선 출력을 지원합니다.
+
+> **⚠️ 전원 및 Bluetooth 사용 안내**
+>
+> Ostinato는 배터리를 내장하지 않은 키보드입니다. 키보드의 작동과 Bluetooth 사용을 위해 USB 케이블을 연결해야 합니다.
+>
+> USB 케이블을 연결하지 않은 상태에서는 키보드 단독으로 Bluetooth를 사용할 수 없습니다.
 
 RP2040은 키보드의 주요 기능을 담당하며, ESP32-C3 모듈이 Bluetooth 연결을 제공합니다.
 
@@ -101,6 +112,8 @@ USB 모드에서는 일반적인 USB HID 키보드로 동작합니다.
 - **Bluetooth 3**
 
 활성 Bluetooth 슬롯은 키보드에서 직접 선택할 수 있습니다. 펌웨어는 UART를 통해 ESP32-C3와 통신하며 Bluetooth 연결 상태와 슬롯 선택을 제어합니다.
+
+Bluetooth를 사용하더라도 USB 케이블을 통한 전원 공급이 필요합니다. 배터리가 없으므로 USB 전원 없이 Bluetooth만으로 작동할 수 없습니다.
 
 ---
 
