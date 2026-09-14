@@ -9,7 +9,7 @@
 
 A custom 40% ortholinear mechanical keyboard designed from the ground up.
 
-Ostinato is a compact 45-key ortholinear keyboard featuring a custom PCB, aluminum case, gasket-mounted plate, rotary encoder, RGB status indicators, and hybrid USB/Bluetooth connectivity.
+Ostinato is a custom 45-key ortholinear keyboard featuring a custom PCB, aluminum case, gasket-mounted plate, rotary encoder, RGB status indicators, and USB connectivity with Bluetooth wireless output when powered via USB.
 
 The project includes the complete hardware and firmware design, from the PCB and case to the QMK/Vial firmware and ESP32-C3 Bluetooth controller.
 
@@ -23,7 +23,7 @@ The project includes the complete hardware and firmware design, from the PCB and
 - QMK firmware
 - Vial support
 - USB and Bluetooth connectivity
-- ESP32-C3-based Bluetooth controller
+- ESP32-C3-based Bluetooth controller (USB power required; no battery; standalone wireless operation is not supported)
 - RP2040-based main controller
 - Three Bluetooth connection slots
 - Rotary encoder
@@ -47,7 +47,9 @@ The project includes the complete hardware and firmware design, from the PCB and
 | Bluetooth MCU | ESP32-C3 |
 | Firmware | QMK |
 | Keymap Configuration | Vial |
-| Connectivity | USB / Bluetooth |
+| Connectivity | USB (primary) / Bluetooth wireless output (USB power required) |
+| Power | USB |
+| Battery | None |
 | Bluetooth Slots | 3 |
 | Switch Type | MX-compatible |
 | RGB LEDs | SK6812MINI (4x) |
@@ -84,9 +86,31 @@ Additional layers and key assignments can be configured through Vial.
 
 ## Connectivity
 
-Ostinato supports both wired USB and Bluetooth operation.
+Ostinato is primarily designed to operate with a USB connection. Bluetooth wireless output is available when the keyboard is powered via USB.
 
-The RP2040 handles the primary keyboard functionality, while an ESP32-C3 module provides Bluetooth connectivity.
+> **⚠️ Power and Bluetooth Notice**
+>
+> Ostinato does not have a built-in battery. A USB cable must be connected to power the keyboard.
+>
+> Bluetooth can only be used while USB power is connected. Standalone Bluetooth operation without a USB connection is not supported.
+
+### USB
+
+In USB mode, Ostinato operates as a standard USB HID keyboard. The keyboard is powered through the USB connection, and all primary functions are available.
+
+### Bluetooth
+
+In Bluetooth mode, the ESP32-C3 transmits key inputs wirelessly to a paired host device.
+
+The keyboard supports three Bluetooth connection slots:
+
+- Bluetooth 1
+- Bluetooth 2
+- Bluetooth 3
+
+The active Bluetooth slot can be selected directly from the keyboard. The firmware communicates with the ESP32-C3 over UART to control Bluetooth connection status and slot selection.
+
+**Note:** USB power is required even when using Bluetooth. Ostinato has no battery and cannot operate as a standalone wireless keyboard without a USB connection.
 
 ### USB
 
